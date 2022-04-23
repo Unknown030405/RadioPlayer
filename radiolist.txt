@@ -1,0 +1,11 @@
+Radio Ibiza,http://wma02.fluidstream.net:5010/
+Dancewave!,http://stream.dancewave.online:8080/dance.mp3
+YourTrance Radio,http://streaming206.radionomy.com:80/YourTranceRadio
+!Superdance,http://str.topradio.be:80/topradio.aac
+Zen FM,http://str.topradio.be:80/zenfm.mp3
+PulseEDM Dance Music,http://pulseedm.cdnstream1.com:8124/1373_128
+ABCLounge,http://www.radioson.ru:8009/LoungeABC.mp3
+HearMe Beethoven,http://hearme.fm:10003/stream
+HearMe Handel,http://hearme.fm:10005/stream
+Abacus Mozart,http://178.33.232.106:8046/autodj
+RadioMozart,http://streaming307.radionomy.com:80/Radio-Mozart

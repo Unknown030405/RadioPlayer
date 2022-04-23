@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if error != 0 %}
+        <div class="alert alert-danger">something went wrong</div>
+{% else %}
+    <div class="sidebar">
+
+    </div>
+    <div class="main_content">
+        {% block audio_content %}{% endblock %}
+    </div>
+{% endif %}
+{% endblock %}

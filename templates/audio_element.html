@@ -1,0 +1,10 @@
+{% extends "home_page.html" %}
+
+{% block audio_content %}
+{% for src in radio_list %}
+<h1>{{src["name"]}}</h1>
+<audio controls>
+    <source src="{{src['link']}}" type="audio/mp3">
+</audio>
+{% endfor %}
+{% endblock %}
