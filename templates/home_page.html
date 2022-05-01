@@ -1,14 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if error != 0 %}
-        <div class="alert alert-danger">something went wrong</div>
-{% else %}
-    <div class="sidebar">
+<div class="grid-wrapper">
+    <ul class="sidebar">
+        <a href={{url_for("home")}}>
+            <li class=" {% if data.site == 'home' %} selected {% endif %} "> Home</li>
+        </a>
 
-    </div>
+        <a href={{url_for("favorite")}}>
+            <li class=" {% if data.site == 'favorite' %} selected {% endif %} "> Favorite</li>
+        </a>
+
+        <a href={{url_for("favorite")}}>
+            <li class=" {% if data.site == 'favorite' %} selected {% endif %} "> Favorite</li>
+        </a>
+    </ul>
+    {% if error != 0 %}
+    {% if error_msg %}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {% else %}
+    <div class="alert alert-danger">something went wrong</div>
+    {% endif %}
+    {% else %}
     <div class="main_content">
-        {% block audio_content %}{% endblock %}
+        <h2 strong><strong>Welcome back, {{user}}</strong></h2>
+        <div class="grid-wrapper">
+            {% block audio_content %}{% endblock %}
+        </div>
     </div>
-{% endif %}
+    {% endif %}
+</div>
 {% endblock %}

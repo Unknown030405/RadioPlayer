@@ -1,0 +1,82 @@
+.error-field {
+    background-color: #dc3545;
+    width:200px;
+    padding: 5px;
+    margin: 2px;
+}
+
+a {
+    text-color: lime;
+}
+
+li{
+    list-style-type: none;
+    text-size:16pt;
+    margin:10px;
+    padding: 5px;
+    border-radius:10px 4px 4px 10px;
+}
+
+.selected {
+    background-color:#dedede;
+}
+
+.main_content {
+    text-align: center;
+}
+
+.form_element {
+    width: 400px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.button {
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: dotted;
+    background-color: lime;
+    text-align:bottom;
+}
+
+.grid-wrapper {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:10px;
+}
+
+.radio_form {
+    background-color: #E9FFFF;
+    margin:5px;
+    border-radius:15px;
+    border-width:5px;
+    border-style:solid;
+    border-color:dark_green;
+    text-align:center;
+    padding:5px;
+}
+
+.unfollowed_button{
+    text-size: 5px;
+    width: 70%;
+    height: 5%;
+    transition: width 1s, height 1s;
+}
+
+.unfollowed_button:hover {
+    width: 95%;
+    height = 7%;
+}
+
+.followed_button{
+    text-size: 5px;
+    width: 70%;
+    height = 5%;
+    background-color:pink;
+    transition: width 1s, height 1s;
+}
+
+.followed_button:hover {
+    width: 95%;
+    height = 7%;
+}

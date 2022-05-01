@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post" novalidate, class="container">
+    {% if error_msg %}
+    <div class="error-field">{{error_msg}}</div>
+    {% endif %}
+    <div>
+        {{ form.csrf_token }}
+    </div>
+    <div class="form_element">
+        {% for field in form if field.name != 'csrf_token' %}
+        <div>{{ field.label() }}</div>
+        <div>
+            {{ field() }}
+            {% for error in field.errors %}
+            <div class="error-field">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div><a href={{data.other_href}}>To {{data.name}}</a></div>
+</form>
+
+{% endblock %}

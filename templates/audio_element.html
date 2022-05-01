@@ -2,9 +2,21 @@
 
 {% block audio_content %}
 {% for src in radio_list %}
-<h1>{{src["name"]}}</h1>
-<audio controls>
-    <source src="{{src['link']}}" type="audio/mp3">
-</audio>
+<form method="post" action="/home" class="radio_form">
+    <h1>{{src["name"]}}</h1>
+    <audio controls>
+        <source src="{{src['link']}}" type="audio/mp3">
+    </audio>
+    {% if src["followed"] %}
+    <div>
+        <input value="Stop following" type="submit" name={{src["name"]}} class="button followed_button">
+    </div>
+    {% else %}
+    <div>
+        <input type="submit" value="Follow" name={{src["name"]}}
+               class="unfollowed_button button">
+    </div>
+    {% endif %}
+</form>
 {% endfor %}
 {% endblock %}

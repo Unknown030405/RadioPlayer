@@ -1,6 +1,14 @@
-import datetime
 import sqlalchemy
 from data.db_session import SqlAlchemyBase
+
+association_table = sqlalchemy.Table(
+    'association',
+    SqlAlchemyBase.metadata,
+    sqlalchemy.Column('users', sqlalchemy.Integer,
+                      sqlalchemy.ForeignKey('users.id')),
+    sqlalchemy.Column('radios', sqlalchemy.Integer,
+                      sqlalchemy.ForeignKey('radios.id'))
+)
 
 
 class Radio(SqlAlchemyBase):
