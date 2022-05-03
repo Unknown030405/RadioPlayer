@@ -16,6 +16,7 @@ class User(SqlAlchemyBase):
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
     image = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    image_name = ""
     followed = list()
 
     def __str__(self):

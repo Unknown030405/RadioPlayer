@@ -1,14 +1,21 @@
-{% extends "base.html" %}
+{% extends "home_page.html" %}
 
-{% block content %}
+{% block audio_content %}
 <form action="" method="post" novalidate class="container" enctype="multipart/form-data">
     {% if error_msg %}
     <div class="error-field">{{error_msg}}</div>
+    {% endif %}
+    {% if good_msg %}
+    <div class="good-field">{{good_msg}}</div>
     {% endif %}
     <div>
         {{ form.csrf_token }}
     </div>
     <div class="form_element">
+        {% for label in data["constants"] %}
+        <div>{{label["name"]}}</div>
+        <div>{{label["value"]}}</div>
+        {% endfor %}
         {% for field in form if field.name != 'csrf_token' %}
         <div>{{ field.label() }}</div>
         <div>
@@ -19,7 +26,6 @@
         </div>
         {% endfor %}
     </div>
-    <div><a href={{data.other_href}}>To {{data.name}}</a></div>
 </form>
 
 {% endblock %}

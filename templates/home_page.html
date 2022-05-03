@@ -3,14 +3,13 @@
 {% block content %}
 <div class="grid-wrapper">
     <ul class="sidebar">
+        <a href={{url_for("profile")}}>
+            <li class=" {% if data.site == 'profile' %} selected {% endif %} ">
+            <img src={{url_for("static",filename=data.path)}} width="30px"> {{user}}</li>
+        </a>
         <a href={{url_for("home")}}>
             <li class=" {% if data.site == 'home' %} selected {% endif %} "> Home</li>
         </a>
-
-        <a href={{url_for("favorite")}}>
-            <li class=" {% if data.site == 'favorite' %} selected {% endif %} "> Favorite</li>
-        </a>
-
         <a href={{url_for("favorite")}}>
             <li class=" {% if data.site == 'favorite' %} selected {% endif %} "> Favorite</li>
         </a>
@@ -23,7 +22,6 @@
     {% endif %}
     {% else %}
     <div class="main_content">
-        <h2 strong><strong>Welcome back, {{user}}</strong></h2>
         <div class="grid-wrapper">
             {% block audio_content %}{% endblock %}
         </div>
