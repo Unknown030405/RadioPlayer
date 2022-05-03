@@ -15,9 +15,10 @@ class User(SqlAlchemyBase):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
-    image = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    image_name = ""
-    followed = list()
+    image = sqlalchemy.Column(sqlalchemy.String, default="default.jpg")
+    followed = orm.relation("Radio",
+                            secondary="association",
+                            backref="radio")
 
     def __str__(self):
         return ", ".join(map(str, [self.name, self.email, self.created_date] + self.followed))

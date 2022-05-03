@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="grid-wrapper">
+<div class="home_grid">
     <ul class="sidebar">
         <a href={{url_for("profile")}}>
             <li class=" {% if data.site == 'profile' %} selected {% endif %} ">
